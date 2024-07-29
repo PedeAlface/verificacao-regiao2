@@ -21,6 +21,10 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         input[type="text"] {
             padding: 10px;
@@ -29,6 +33,10 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+        .button-container {
+            display: flex;
+            gap: 10px; /* Espaçamento entre os botões */
+        }
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -36,6 +44,7 @@
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 150px; /* Define a largura dos botões */
         }
         .button-verify {
             background-color: #28a745;
@@ -47,7 +56,6 @@
         .button-back {
             background-color: #dc3545;
             color: white;
-            margin-left: 10px;
         }
         .button-back:hover {
             background-color: #c82333;
@@ -67,8 +75,10 @@
         <h1>Verificação de Região</h1>
         <p>Por favor, insira o seu CEP:</p>
         <input type="text" id="cep" placeholder="CEP">
-        <button class="button-verify" onclick="verificarCEP()">Verificar</button>
-        <button class="button-back" onclick="voltar()">Voltar</button>
+        <div class="button-container">
+            <button class="button-verify" onclick="verificarCEP()">Verificar</button>
+            <button class="button-back" onclick="voltar()">Voltar</button>
+        </div>
         <p class="message" id="message">Não atendemos na sua região.</p>
     </div>
 
