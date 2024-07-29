@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificação de Região</title>
     <style>
-		body {
-			font-family: Arial, sans-serif;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-			//background: url('./background.jpg') no-repeat center center fixed;
-			background-size: cover;
-			margin: 0;
-		}
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            margin: 0;
+        }
         .container {
             text-align: center;
             background: rgba(0, 51, 0, 0.8);
@@ -35,13 +34,23 @@
             font-size: 16px;
             border-radius: 5px;
             border: none;
-            background-color: #28a745;
-            color: white;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        button:hover {
+        .button-verify {
+            background-color: #28a745;
+            color: white;
+        }
+        .button-verify:hover {
             background-color: #218838;
+        }
+        .button-back {
+            background-color: #dc3545;
+            color: white;
+            margin-left: 10px;
+        }
+        .button-back:hover {
+            background-color: #c82333;
         }
         .message {
             margin-top: 20px;
@@ -58,7 +67,8 @@
         <h1>Verificação de Região</h1>
         <p>Por favor, insira o seu CEP:</p>
         <input type="text" id="cep" placeholder="CEP">
-        <button onclick="verificarCEP()">Verificar</button>
+        <button class="button-verify" onclick="verificarCEP()">Verificar</button>
+        <button class="button-back" onclick="voltar()">Voltar</button>
         <p class="message" id="message">Não atendemos na sua região.</p>
     </div>
 
@@ -83,7 +93,6 @@
                     mensagem.style.display = "block";
                 } else if (localidadesValidas.includes(data.localidade)) {
                     window.location.href = "https://orangered-tiger-322274.builder-preview.com/box-essencial"; // Redireciona para a HomePage
-
                 } else {
                     mensagem.textContent = "Poxa... Ainda não atendemos sua região. Fique ligado em nossas redes sociais.";
                     mensagem.style.display = "block";
@@ -92,6 +101,10 @@
                 mensagem.textContent = "Erro ao verificar o CEP. Tente novamente mais tarde.";
                 mensagem.style.display = "block";
             }
+        }
+
+        function voltar() {
+            window.location.href = "https://seu-link-de-voltar.com"; // Substitua com o link desejado
         }
     </script>
 </body>
