@@ -66,7 +66,7 @@
         async function verificarCEP() {
             var cep = document.getElementById("cep").value.replace("-", "");
             var mensagem = document.getElementById("message");
-            var localidadesValidas = ["Mogi das Cruzes", "Suzano"]; // Adicione mais localidades conforme necessário
+            var localidadesValidas = ["Mogi das Cruzes", "Suzano", "São Paulo"]; // Adicione mais localidades conforme necessário
 
             if (!cep.match(/^\d{8}$/)) {
                 mensagem.textContent = "Por favor, insira um CEP válido.";
@@ -82,10 +82,7 @@
                     mensagem.textContent = "CEP não encontrado.";
                     mensagem.style.display = "block";
                 } else if (localidadesValidas.includes(data.localidade)) {
-                    //window.location.href = "https://www.pedealface.com"; // Redireciona para a HomePage
-
-			mensagem.textContent = "Atendemos a sua região!";
-                    mensagem.style.display = "block";
+                    window.location.href = "https://orangered-tiger-322274.builder-preview.com/box-essencial"; // Redireciona para a HomePage
 
                 } else {
                     mensagem.textContent = "Poxa... Ainda não atendemos sua região. Fique ligado em nossas redes sociais.";
